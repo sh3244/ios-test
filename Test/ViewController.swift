@@ -97,11 +97,9 @@ class ViewController: UIViewController {
     func load() {
         fetchBooks { (books) in
             var manyBooks = books
-            manyBooks.append(contentsOf: books)
-            manyBooks.append(contentsOf: books)
-            manyBooks.append(contentsOf: books)
-            manyBooks.append(contentsOf: books)
-            manyBooks.append(contentsOf: books)
+            for _ in 0..<100 {
+                manyBooks.append(contentsOf: books)
+            }
             self.diffCalculator?.sectionedValues = SectionedValues([("", manyBooks)])
             self.refreshControl.endRefreshing()
         }
@@ -121,6 +119,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let item = diffCalculator?.value(atIndexPath: indexPath) else {
             return testCell
         }
+
         testCell.label.text = item.title
         return testCell
     }

@@ -13,6 +13,12 @@ import Arrow
 class Pager: NSObject {
     var books = [Book]()
 
+    var loadingSpeed = 5
+
+//    var loadedBooks
+//    var unloadedBooks
+//    var loadingBooks
+
     func loadBooks() {
         fetchBooks { (books) in
             self.books = books

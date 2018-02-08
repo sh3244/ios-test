@@ -15,6 +15,7 @@
 		222F314320210AEC00C6B000 /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F314220210AEC00C6B000 /* TestUITests.swift */; };
 		222F315120210B0400C6B000 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F315020210B0400C6B000 /* SegmentedControl.swift */; };
 		222F31552021133C00C6B000 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 222F31542021133C00C6B000 /* Podfile */; };
+		2230411D202B9F4C0097CCFE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2230411C202B9F4C0097CCFE /* FileManager.swift */; };
 		226ED685202B848500F8DE1F /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226ED684202B848500F8DE1F /* Pager.swift */; };
 		2D6C046E36FDAEEBC3F6D30E /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B3F64214F1F71AB28221E7 /* Pods_Test.framework */; };
 		9B015AE1EFE2B37E9670F386 /* Pods_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8269C8389A7EC71DAF346E17 /* Pods_TestTests.framework */; };
@@ -55,6 +56,7 @@
 		222F315020210B0400C6B000 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		222F315220210B1800C6B000 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		222F31542021133C00C6B000 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2230411C202B9F4C0097CCFE /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		226ED684202B848500F8DE1F /* Pager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pager.swift; sourceTree = "<group>"; };
 		276DD7C55801B180E0E5E382 /* Pods_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2905E37D036602F041E07B49 /* Pods-TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTests/Pods-TestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				222F312E20210AEC00C6B000 /* Info.plist */,
 				222F315020210B0400C6B000 /* SegmentedControl.swift */,
 				226ED684202B848500F8DE1F /* Pager.swift */,
+				2230411E202B9F510097CCFE /* Extension */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -158,6 +161,14 @@
 				222F314420210AEC00C6B000 /* Info.plist */,
 			);
 			path = TestUITests;
+			sourceTree = "<group>";
+		};
+		2230411E202B9F510097CCFE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2230411C202B9F4C0097CCFE /* FileManager.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		226ED686202B8E4600F8DE1F /* Archive */ = {
@@ -480,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2230411D202B9F4C0097CCFE /* FileManager.swift in Sources */,
 				222F312520210AEC00C6B000 /* ViewController.swift in Sources */,
 				226ED685202B848500F8DE1F /* Pager.swift in Sources */,
 				222F315120210B0400C6B000 /* SegmentedControl.swift in Sources */,
