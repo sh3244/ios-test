@@ -9,15 +9,51 @@
 import UIKit
 import Alamofire
 import Arrow
+import AVFoundation
+import PromiseKit
+
+let movieURL = "https://github.com/mediaelement/mediaelement-files/blob/master/big_buck_bunny.mp4"
+let targetURL = "http://techslides.com/demos/sample-videos/small.mp4"
+
+var index = 0
+
+func downloadMovie(videoView: VideoView) {
+    DispatchQueue.global(qos: .background).async {
+
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let url = TEST_CACHE_DIR_URL.appendingPathComponent("video" + index.description).appendingPathExtension("mp4")
+            index += 1
+            return (url, [.removePreviousFile, .createIntermediateDirectories])
+        }
+
+        Alamofire.download(targetURL, to: destination).response { response in
+            if response.destinationURL != nil {
+                let asset = AVURLAsset(url: response.destinationURL!)
+                videoView.playerItem = AVPlayerItem(asset: asset)
+                DispatchQueue.main.async {
+                    videoView.play()
+                }
+            }
+        }
+    }
+}
+
+//func downloadMovie() -> Promise<Void> {
+//    Alamofire.download(targetURL, to: destination).response { response in
+//        if response.destinationURL != nil {
+//            let asset = AVURLAsset(url: response.destinationURL!)
+//            videoView.playerItem = AVPlayerItem(asset: asset)
+//            DispatchQueue.main.async {
+//                videoView.play()
+//            }
+//        }
+//    }
+//}
 
 class Pager: NSObject {
     var books = [Book]()
 
     var loadingSpeed = 5
-
-//    var loadedBooks
-//    var unloadedBooks
-//    var loadingBooks
 
     func loadBooks() {
         fetchBooks { (books) in
@@ -25,11 +61,6 @@ class Pager: NSObject {
         }
     }
 }
-
-//class Book: NSObject {
-//
-//}
-
 
 struct Book: Equatable {
     static func ==(lhs: Book, rhs: Book) -> Bool {

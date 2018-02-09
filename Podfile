@@ -10,6 +10,7 @@ pod 'SnapKit'
 pod 'Dwifft'
 pod 'Alamofire'
 pod 'Arrow'
+pod 'PromiseKit'
 
 target 'TestTests' do
 inherit! :search_paths

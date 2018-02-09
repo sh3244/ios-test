@@ -17,6 +17,7 @@
 		222F31552021133C00C6B000 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 222F31542021133C00C6B000 /* Podfile */; };
 		2230411D202B9F4C0097CCFE /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2230411C202B9F4C0097CCFE /* FileManager.swift */; };
 		226ED685202B848500F8DE1F /* Pager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226ED684202B848500F8DE1F /* Pager.swift */; };
+		22D9EDE0202CD9B00004713E /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9EDDF202CD9B00004713E /* VideoView.swift */; };
 		2D6C046E36FDAEEBC3F6D30E /* Pods_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B3F64214F1F71AB28221E7 /* Pods_Test.framework */; };
 		9B015AE1EFE2B37E9670F386 /* Pods_TestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8269C8389A7EC71DAF346E17 /* Pods_TestTests.framework */; };
 		E76AB446011ABA3B94782EAE /* Pods_TestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 276DD7C55801B180E0E5E382 /* Pods_TestUITests.framework */; };
@@ -58,6 +59,7 @@
 		222F31542021133C00C6B000 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2230411C202B9F4C0097CCFE /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		226ED684202B848500F8DE1F /* Pager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pager.swift; sourceTree = "<group>"; };
+		22D9EDDF202CD9B00004713E /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		276DD7C55801B180E0E5E382 /* Pods_TestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2905E37D036602F041E07B49 /* Pods-TestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTests/Pods-TestTests.release.xcconfig"; sourceTree = "<group>"; };
 		81B3F64214F1F71AB28221E7 /* Pods_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 				222F312E20210AEC00C6B000 /* Info.plist */,
 				222F315020210B0400C6B000 /* SegmentedControl.swift */,
 				226ED684202B848500F8DE1F /* Pager.swift */,
+				22D9EDDF202CD9B00004713E /* VideoView.swift */,
 				2230411E202B9F510097CCFE /* Extension */,
 			);
 			path = Test;
@@ -371,6 +374,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Arrow/Arrow.framework",
 				"${BUILT_PRODUCTS_DIR}/Dwifft/Dwifft.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -378,6 +382,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Arrow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dwifft.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D9EDE0202CD9B00004713E /* VideoView.swift in Sources */,
 				2230411D202B9F4C0097CCFE /* FileManager.swift in Sources */,
 				222F312520210AEC00C6B000 /* ViewController.swift in Sources */,
 				226ED685202B848500F8DE1F /* Pager.swift in Sources */,

@@ -8,25 +8,40 @@
 
 import SnapKit
 import Dwifft
+import AVFoundation
+
+class TestModel: NSObject {
+    var playerItem: AVPlayerItem?
+    var url: URL?
+    var indexPath: IndexPath?
+}
 
 class TestCell: UICollectionViewCell {
 
+    weak var testModel: TestModel?
+
     var imageView = UIImageView()
+    var videoView = VideoView()
     var label = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        addSubview(imageView)
+//        addSubview(imageView)
         addSubview(label)
-        imageView.snp.makeConstraints { make in
+        addSubview(videoView)
+        videoView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+//        imageView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
         label.snp.makeConstraints { make in
             make.left.right.bottom.equalToSuperview()
             make.height.equalTo(50)
         }
         bringSubview(toFront: label)
+        videoView.layer.drawsAsynchronously = true
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -82,9 +97,10 @@ class ViewController: UIViewController {
 
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.height.equalTo(collectionView.snp.width)
-            make.centerY.equalToSuperview()
+//            make.left.right.equalToSuperview()
+//            make.height.equalTo(collectionView.snp.width)
+//            make.centerY.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 
@@ -111,6 +127,15 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let testCell = collectionView.dequeueReusableCell(withReuseIdentifier: "testCell", for: indexPath) as! TestCell
+        testCell.videoView.reset()
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let testCell = collectionView.dequeueReusableCell(withReuseIdentifier: "testCell", for: indexPath) as! TestCell
+//        testCell.videoView.play()
+    }
+
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let testCell = collectionView.dequeueReusableCell(withReuseIdentifier: "testCell", for: indexPath) as? TestCell else {
             return TestCell()
@@ -121,6 +146,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         }
 
         testCell.label.text = item.title
+//        if indexPath.row == 0 {
+            downloadMovie(videoView: testCell.videoView)
+//        }
         return testCell
     }
 
@@ -145,7 +173,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = (UIScreen.main.bounds.width - 1)/2
+//        let size = (UIScreen.main.bounds.width - 1)/2
+        let size = UIScreen.main.bounds.width
         return CGSize(width: size, height: size)
     }
 }

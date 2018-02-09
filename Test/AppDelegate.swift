@@ -15,6 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+        FileManager.default.createTempDirectories()
+        FileManager.default.emptyDirectories()
+        print(FileManager.default)
+
         window = UIWindow()
 //        window?.rootViewController = PageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         window?.rootViewController = ViewController()
